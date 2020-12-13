@@ -1,6 +1,6 @@
-# Starter Projects Localization
+# CZI Gravity Localization
 
-The modules within `utils/translation` can be used to add text localization to a starter-projects based application.
+The modules within `utils/translation` can be used to add text localization to a czi-gravity based application.
 
 ### How to use
 

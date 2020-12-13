@@ -1,10 +1,10 @@
 {
-  "name": "starter-projects",
+  "name": "czi-gravity",
   "version": "0.0.1",
-  "description": "Concord Consortium starter projects",
+  "description": "Concord Consortium CZI Gravity",
   "main": "index.js",
   "jest": {
-    "testURL": "https://starter-projects.unexisting.url.com",
+    "testURL": "https://czi-gravity.unexisting.url.com",
     "setupFilesAfterEnv": [
       "<rootDir>src/setupTests.js"
     ],
@@ -52,14 +52,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/concord-consortium/starter-projects.git"
+    "url": "git+https://github.com/concord-consortium/czi-gravity.git"
   },
   "author": "Concord Consortium",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/concord-consortium/starter-projects/issues"
+    "url": "https://github.com/concord-consortium/czi-gravity/issues"
   },
-  "homepage": "https://github.com/concord-consortium/starter-projects#readme",
+  "homepage": "https://github.com/concord-consortium/czi-gravity#readme",
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
     "all": true,
