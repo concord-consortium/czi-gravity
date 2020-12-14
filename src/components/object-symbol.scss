@@ -1,0 +1,23 @@
+.object {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .weight {
+    white-space: nowrap;
+  }
+
+  &.small {
+    font-size: 12px;
+    img {
+      height: 50px;
+    }
+  }
+}
