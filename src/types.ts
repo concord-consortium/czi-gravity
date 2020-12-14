@@ -6,7 +6,11 @@ export enum SysObject {
   chair = "chair"
 }
 
-export interface Row {
+export interface IRow {
   object1: SysObject;
   object2: SysObject;
+}
+
+export interface IInteractiveState {
+  rows: IRow[];
 }
