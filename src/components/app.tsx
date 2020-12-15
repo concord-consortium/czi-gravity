@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { MainView } from "./main-view";
 import { Table } from "./table";
-import { SysObject, IRow, IInteractiveState } from "../types";
+import { SysObject, IInteractiveState } from "../types";
 import { useAutoHeight } from "../hooks/use-auto-height";
 import { useInteractiveState } from "@concord-consortium/lara-interactive-api";
 import "./app.scss";
