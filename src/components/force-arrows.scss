@@ -1,0 +1,10 @@
+.force-arrows {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+
+  img + img {
+    margin-left: 20px;
+  }
+}

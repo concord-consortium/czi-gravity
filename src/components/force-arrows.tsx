@@ -1,0 +1,36 @@
+import React from "react";
+import { SysObject } from "../types";
+import arrowLeftSrc from "../assets/arrowleft.png";
+import arrowRightSrc from "../assets/arrowright.png";
+import "./force-arrows.scss";
+
+interface IProps {
+  object1: SysObject;
+  object2: SysObject;
+  small?: boolean;
+}
+
+const getForce = (mass1: number, mass2: number) => mass1 * mass2;
+
+const weight: Record<SysObject, number> = {
+  paperClip: 1,
+  bottle: 1.4,
+  chair: 1.8,
+  human: 2.2,
+  earth: 3,
+};
+
+const maxArrowWidthInPx = 150;
+const maxForce = getForce(weight[SysObject.earth], weight[SysObject.earth]);
+
+export const ForceArrows: React.FC<IProps> = ({ object1, object2 }) => {
+  // size is defined in px, between 0 and maxArrowWidthInPx.
+  const width = (getForce(weight[object1], weight[object2]) / maxForce * maxArrowWidthInPx).toFixed(0) + "px";
+  return (
+    <div className="force-arrows">
+      <img src={arrowRightSrc} alt="arrow right" style={{width}} />
+      <img src={arrowLeftSrc} alt="arrow left" style={{width}} />
+    </div>
+  );
+};
+
