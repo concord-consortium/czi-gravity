@@ -13,7 +13,7 @@ export const Table: React.FC<IProps> = ({ rows }) => {
     <div className="table">
       <table>
         <tbody>
-          <tr><th>System</th><th>Object 1</th><th>Object 2</th><th>Strength and Direction of Gravitational Force</th></tr>
+          <tr><th>System</th><th>Object 1</th><th>Object 2</th><th>Strength and Direction of Gravitational Forces</th></tr>
           {
             rows.map((_, idx) => {
               // Reverse order of rows.

@@ -23,14 +23,15 @@ export const MainView: React.FC<IProps> = ({ saveToTable, clearTable }) => {
       <div className="header">Select two objects:</div>
       <div className="columns">
         <div className="column">
-          <SelectObject value={object1} onChange={setObject1}/>
+          <div>Object 1: <SelectObject value={object1} onChange={setObject1}/></div>
           <ObjectSymbol objectType={object1} />
         </div>
         <div className="column arrows">
-         <ForceArrows object1={object1} object2={object2} />
+          <div className="label">strength and direction<br/>of gravitational forces</div>
+          <ForceArrows object1={object1} object2={object2} />
         </div>
         <div className="column">
-          <SelectObject value={object2} onChange={setObject2}/>
+          <div>Object 2: <SelectObject value={object2} onChange={setObject2}/></div>
           <ObjectSymbol objectType={object2} />
         </div>
       </div>
