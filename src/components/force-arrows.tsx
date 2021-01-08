@@ -22,15 +22,17 @@ const weight: Record<SysObject, number> = {
 
 const maxArrowWidthInPx = 150;
 const maxForce = getForce(weight[SysObject.earth], weight[SysObject.earth]);
+const arrowAspectRatio = 0.26;
 
 export const ForceArrows: React.FC<IProps> = ({ object1, object2 }) => {
   // size is defined in px, between 0 and maxArrowWidthInPx.
-  const width = (getForce(weight[object1], weight[object2]) / maxForce * maxArrowWidthInPx).toFixed(0) + "px";
+  const width = getForce(weight[object1], weight[object2]) / maxForce * maxArrowWidthInPx;
+  const height = width * arrowAspectRatio;
+  const style = { width: width.toFixed(0) + "px", height: height.toFixed(0) + "px" };
   return (
     <div className="force-arrows">
-      <img src={arrowRightSrc} alt="arrow right" style={{width}} />
-      <img src={arrowLeftSrc} alt="arrow left" style={{width}} />
+      <img src={arrowRightSrc} alt="arrow right" style={style} />
+      <img src={arrowLeftSrc} alt="arrow left" style={style} />
     </div>
   );
 };
-
