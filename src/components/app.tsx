@@ -14,6 +14,8 @@ export const App: React.FC = () => {
   const report = initMsg?.mode === "report";
   const version = getVersion();
   const [ showForce, setShowForce ] = useState(false);
+  const forceText = version === "earth" ? "Gravitational force between object and Earth"
+                                        : "Strength and Direction of Gravitational Forces";
 
   useAutoHeight({ container: containerRef.current, disabled: false });
 
@@ -32,8 +34,8 @@ export const App: React.FC = () => {
 
   return (
     <div className="app" ref={containerRef}>
-      { !report && <MainView showForce={showForce} version={version} saveToTable={saveToTable} clearTable={clearTable} handleChangeShowForceState={handleChangeShowForceState}/> }
-      <Table rows={interactiveState?.rows || []} />
+      { !report && <MainView showForce={showForce} version={version} saveToTable={saveToTable} clearTable={clearTable} forceText={forceText} /> }
+      <Table version={version} rows={interactiveState?.rows || []} forceText={forceText}/>
     </div>
   );
 };
