@@ -4,7 +4,6 @@ import { Table } from "./table";
 import { SysObject, IInteractiveState } from "../types";
 import { useAutoHeight } from "../hooks/use-auto-height";
 import { useInteractiveState, useInitMessage } from "@concord-consortium/lara-interactive-api";
-import { getVersion } from "../utils/utils";
 import "./app.scss";
 
 export const App: React.FC = () => {
@@ -12,7 +11,6 @@ export const App: React.FC = () => {
   const { interactiveState, setInteractiveState } = useInteractiveState<IInteractiveState>();
   const initMsg = useInitMessage();
   const report = initMsg?.mode === "report";
-  const version = getVersion();
 
   useAutoHeight({ container: containerRef.current, disabled: false });
 
@@ -26,8 +24,8 @@ export const App: React.FC = () => {
 
   return (
     <div className="app" ref={containerRef}>
-      { !report && <MainView version={version} saveToTable={saveToTable} clearTable={clearTable} /> }
-      <Table version={version} rows={interactiveState?.rows || []} />
+      { !report && <MainView saveToTable={saveToTable} clearTable={clearTable} /> }
+      <Table rows={interactiveState?.rows || []} />
     </div>
   );
 };

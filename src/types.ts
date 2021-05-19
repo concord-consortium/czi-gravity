@@ -1,7 +1,6 @@
 export enum SysObject {
   bottle = "bottle",
   earth = "earth",
-  earthexp = "earthexp",
   paperClip = "paperClip",
   human = "human",
   chair = "chair"

@@ -6,12 +6,11 @@ import { ForceArrows } from "./force-arrows";
 import "./main-view.scss";
 
 interface IProps {
-  version: string;
   saveToTable: (object1: SysObject, object2: SysObject) => void;
   clearTable: () => void;
 }
 
-export const MainView: React.FC<IProps> = ({ saveToTable, clearTable, version }) => {
+export const MainView: React.FC<IProps> = ({ saveToTable, clearTable }) => {
   const [ object1, setObject1 ] = useState<SysObject>(SysObject.bottle);
   const [ object2, setObject2 ] = useState<SysObject>(SysObject.earth);
 
@@ -24,7 +23,7 @@ export const MainView: React.FC<IProps> = ({ saveToTable, clearTable, version })
       <div className="header">Select two objects:</div>
       <div className="columns">
         <div className="column">
-          <div>Object 1: <SelectObject version={version} value={object1} onChange={setObject1}/></div>
+          <div>Object 1: <SelectObject value={object1} onChange={setObject1}/></div>
           <ObjectSymbol objectType={object1} />
         </div>
         <div className="column arrows">
@@ -32,7 +31,7 @@ export const MainView: React.FC<IProps> = ({ saveToTable, clearTable, version })
           <ForceArrows object1={object1} object2={object2} />
         </div>
         <div className="column">
-          <div>Object 2: <SelectObject version={version} value={object2} onChange={setObject2}/></div>
+          <div>Object 2: <SelectObject value={object2} onChange={setObject2}/></div>
           <ObjectSymbol objectType={object2} />
         </div>
       </div>

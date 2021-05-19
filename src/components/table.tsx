@@ -5,7 +5,6 @@ import { ForceArrows } from "./force-arrows";
 import "./table.scss";
 
 interface IProps {
-  version: string;
   rows: IRow[];
 }
 
