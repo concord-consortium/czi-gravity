@@ -11,6 +11,12 @@ context("Test the overall app", () => {
       cy.get("[data-testid=question-mark]").should("be.visible");
       cy.get("[data-testid=force-arrows]").should("not.exist");
     });
+    it("renders aleert when question mark is clicked", () => {
+      cy.get("[data-testid=question-mark]").click();
+      cy.on("winow:alert", (str) => {
+        expect(str).to.contain("Click on Calculate forces button");
+      });
+    });
     it("renders arrows and saves to table when Calculate forces button is clicked", ()=>{
       cy.get("[data-testid=save-button]").click();
       cy.get("[data-testid=question-mark]").should("not.exist");
