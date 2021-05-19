@@ -30,7 +30,7 @@ export const ForceArrows: React.FC<IProps> = ({ object1, object2 }) => {
   const height = width * arrowAspectRatio;
   const style = { width: width.toFixed(0) + "px", height: height.toFixed(0) + "px" };
   return (
-    <div className="force-arrows">
+    <div className="force-arrows" data-testid="force-arrows">
       <img src={arrowRightSrc} alt="arrow right" style={style} />
       <img src={arrowLeftSrc} alt="arrow left" style={style} />
     </div>

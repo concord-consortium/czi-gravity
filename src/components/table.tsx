@@ -20,7 +20,7 @@ export const Table: React.FC<IProps> = ({ rows }) => {
               const idxReversed = rows.length - 1 - idx;
               const row = rows[idxReversed];
               return (
-                <tr key={idxReversed}>
+                <tr key={idxReversed} data-testid="data-row">
                   <td>{ idxReversed + 1 }</td>
                   <td><ObjectSymbol objectType={row.object1} small={true} /></td>
                   <td><ObjectSymbol objectType={row.object2} small={true} /></td>

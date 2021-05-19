@@ -31,13 +31,13 @@ export const MainView: React.FC<IProps> = ({ showForce, version, saveToTable, cl
       <div className="header">Select two objects:</div>
       <div className="columns">
         <div className="column">
-          <div>Object 1: <SelectObject value={object1} onChange={setObject1} changeShowForceState={handleChangeShowForceState}/></div>
+          <div data-testid="object-1">Object 1: <SelectObject value={object1} onChange={setObject1} changeShowForceState={handleChangeShowForceState}/></div>
           <ObjectSymbol objectType={object1} />
         </div>
         <div className="column arrows">
           <div className="label">strength and direction<br/>of gravitational forces</div>
           { version === "forces-unknown" && !showForce
-              ? <div className="question-mark"
+              ? <div className="question-mark" data-testid="question-mark"
                      title="Click on Calculate forces button to see a representation of the forces between the two objects"
                      onClick={showAlert}>
                      ?
@@ -46,13 +46,13 @@ export const MainView: React.FC<IProps> = ({ showForce, version, saveToTable, cl
           }
         </div>
         <div className="column">
-          <div>Object 2: <SelectObject value={object2} onChange={setObject2} changeShowForceState={handleChangeShowForceState}/></div>
+          <div data-testid="object-2">Object 2: <SelectObject value={object2} onChange={setObject2} changeShowForceState={handleChangeShowForceState}/></div>
           <ObjectSymbol objectType={object2} />
         </div>
       </div>
       <div className="buttons">
-        <button onClick={handleSave}>{version === "forces-unknown" ? "Calculate forces" : "Save to table"}</button>
-        <button onClick={clearTable}>Clear table</button>
+        <button onClick={handleSave} data-testid="save-button">{version === "forces-unknown" ? "Calculate forces" : "Save to table"}</button>
+        <button onClick={clearTable} data-testid="clear-table-button">Clear table</button>
       </div>
     </div>
   );
