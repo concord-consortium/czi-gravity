@@ -42,6 +42,11 @@ To deploy a production release:
 10. Push production to GitHub
 11. Use https://github.com/concord-consortium/czi-gravity/releases to create a new release tag
 
+### Versions
+Adding query parameters to the url launches different versions of the model.
+* `exponential` - Adds option Earth Mass in exponential form to the object dropdown.
+* `forces-unknown` - Forces are not calculated automatically when user changes object selection.
+
 ### Testing
 
 Run `npm test` to run jest tests. Run `npm run test:full` to run jest and Cypress tests.
