@@ -24,6 +24,13 @@ export const MainView: React.FC<IProps> = ({ showForce, mode, forceText, saveToT
   const handleSave = () => {
     saveToTable(object1, object2);
     handleChangeShowForceState(true);
+<<<<<<< HEAD
+=======
+  };
+
+  const showAlert = () => {
+    alert("Click on Calculate forces button to see a representation of the forces between the two objects");
+>>>>>>> 5f70fc2 (Creates version that doesn't automatically show forces when user selects objects)
   };
   const handleSetObject1 = (value: SysObject) => {
     setObject1(value);
