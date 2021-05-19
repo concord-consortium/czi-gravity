@@ -18,6 +18,7 @@ const weight: Record<SysObject, number> = {
   chair: 1.8,
   human: 2.2,
   earth: 3,
+  earthexp: 3,
 };
 
 const maxArrowWidthInPx = 150;
