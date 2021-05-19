@@ -44,7 +44,6 @@ To deploy a production release:
 
 ### Versions
 Adding query parameters to the url launches different versions of the model.
-* `exponential` - Adds option Earth Mass in exponential form to the object dropdown.
 * `forces-unknown` - Forces are not calculated automatically when user changes object selection.
 
 ### Testing
