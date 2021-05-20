@@ -3,7 +3,15 @@ export enum SysObject {
   earth = "earth",
   paperClip = "paperClip",
   human = "human",
-  chair = "chair"
+  chair = "chair",
+  backpack = "backpack",
+  bowlingBall = "bowlingBall",
+  flourBag=  "flourBag",
+  soccer = "soccer",
+  kite = "kite",
+  worldTradeCtr = "worldTradeCtr",
+  schoolbus = "schoolbus",
+  venus = "venus",
 }
 
 export interface IRow {
@@ -14,3 +22,6 @@ export interface IRow {
 export interface IInteractiveState {
   rows: IRow[];
 }
+
+export const Versions = [ "forces-unknown", "earth", "venus", "vanilla" ] as const;
+export type Version = typeof Versions[number];

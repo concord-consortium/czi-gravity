@@ -1,23 +1,24 @@
 import React from "react";
-import { SysObject } from "../types";
+import { SysObject, Version } from "../types";
+import { getObjectOptions } from "../utils/utils";
 
 interface IProps {
+  version: Version;
   value: SysObject;
   onChange?: (value: SysObject) => void;
 }
 
-export const SelectObject: React.FC<IProps> = ({ value, onChange }) => {
+export const SelectObject: React.FC<IProps> = ({ version, value, onChange }) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange?.(event.target.value as SysObject);
   };
-
+  const optionsList = getObjectOptions(version);
   return (
     <select onChange={handleChange} value={value}>
-      <option value={SysObject.bottle}>Water Bottle</option>
-      <option value={SysObject.earth}>Earth</option>
-      <option value={SysObject.paperClip}>Paper Clip</option>
-      <option value={SysObject.human}>Human</option>
-      <option value={SysObject.chair}>Chair</option>
+      { optionsList.map((option: any, i: number) => {
+          return <option value={option.object} key={option.object}>{option.text}</option>;
+       })
+      }
     </select>
   );
 };
