@@ -9,12 +9,9 @@ interface IProps {
   changeShowForceState?: (state: boolean) => void;
 }
 
-}
-
 export const SelectObject: React.FC<IProps> = ({ mode, value, onChange }) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange?.(event.target.value as SysObject);
-    changeShowForceState?.(false);
   };
   const optionsList = getObjectOptions(mode);
   return (
