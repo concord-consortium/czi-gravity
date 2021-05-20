@@ -4,13 +4,11 @@ import { SysObject } from "../types";
 interface IProps {
   value: SysObject;
   onChange?: (value: SysObject) => void;
-  changeShowForceState?: (state: boolean) => void;
 }
 
-export const SelectObject: React.FC<IProps> = ({ value, onChange, changeShowForceState }) => {
+export const SelectObject: React.FC<IProps> = ({ value, onChange }) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange?.(event.target.value as SysObject);
-    changeShowForceState?.(false);
   };
 
   return (

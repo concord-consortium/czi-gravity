@@ -21,6 +21,14 @@ export const MainView: React.FC<IProps> = ({ showForce, version, saveToTable, cl
     saveToTable(object1, object2);
     handleChangeShowForceState(true);
   };
+  const handleSetObject1 = (value: SysObject) => {
+    setObject1(value);
+    handleChangeShowForceState(false);
+  };
+  const handleSetObject2 = (value: SysObject) => {
+    setObject2(value);
+    handleChangeShowForceState(false);
+  };
 
   const showAlert = () => {
     alert("Click on Calculate forces button to see a representation of the forces between the two objects");
@@ -31,7 +39,7 @@ export const MainView: React.FC<IProps> = ({ showForce, version, saveToTable, cl
       <div className="header">Select two objects:</div>
       <div className="columns">
         <div className="column">
-          <div data-testid="object-1">Object 1: <SelectObject value={object1} onChange={setObject1} changeShowForceState={handleChangeShowForceState}/></div>
+          <div data-testid="object-1">Object 1: <SelectObject value={object1} onChange={handleSetObject1}/></div>
           <ObjectSymbol objectType={object1} />
         </div>
         <div className="column arrows">
@@ -46,7 +54,7 @@ export const MainView: React.FC<IProps> = ({ showForce, version, saveToTable, cl
           }
         </div>
         <div className="column">
-          <div data-testid="object-2">Object 2: <SelectObject value={object2} onChange={setObject2} changeShowForceState={handleChangeShowForceState}/></div>
+          <div data-testid="object-2">Object 2: <SelectObject value={object2} onChange={handleSetObject2}/></div>
           <ObjectSymbol objectType={object2} />
         </div>
       </div>
