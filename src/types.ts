@@ -14,3 +14,7 @@ export interface IRow {
 export interface IInteractiveState {
   rows: IRow[];
 }
+
+export const Versions = [ "forces-unknown", "earth", "venus", undefined ] as const;
+export type Version = typeof Versions[number];
+

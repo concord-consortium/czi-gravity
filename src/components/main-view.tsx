@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { SelectObject } from "./select-object";
-import { SysObject } from "../types";
+import { SysObject, Version } from "../types";
 import { ObjectSymbol } from "./object-symbol";
 import { ForceArrows } from "./force-arrows";
 import "./main-view.scss";
 
 interface IProps {
   showForce: boolean;
-  version: string;
+  version: Version;
   saveToTable: (object1: SysObject, object2: SysObject) => void;
   clearTable: () => void;
   handleChangeShowForceState: (state: boolean) => void;
