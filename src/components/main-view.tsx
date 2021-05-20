@@ -4,6 +4,7 @@ import { SysObject, Version } from "../types";
 import { ObjectSymbol } from "./object-symbol";
 import { ForceArrows } from "./force-arrows";
 import "./main-view.scss";
+import { getObjectOptions } from "../utils/utils";
 
 interface IProps {
   showForce: boolean;
@@ -14,9 +15,14 @@ interface IProps {
   handleChangeShowForceState: (state: boolean) => void;
 }
 
-export const MainView: React.FC<IProps> = ({ showForce, version, forceText, saveToTable, clearTable, handleChangeShowForceState }) => {
-  const [ object1, setObject1 ] = useState<SysObject>(SysObject.bottle);
-  const [ object2, setObject2 ] = useState<SysObject>(SysObject.earth);
+}
+
+export const MainView: React.FC<IProps> = ({ version, forceText, saveToTable, clearTable }) => {
+  const optionsList = getObjectOptions(version);
+console.log(optionsList[0].object);
+  const [ object1, setObject1 ] = useState<SysObject>(optionsList[0].object as SysObject);
+  const [ object2, setObject2 ] = useState<SysObject>((version==="earth" || version==="vanilla")
+                                                        ? SysObject.earth : optionsList[0].object as SysObject);
 
   const handleSave = () => {
     saveToTable(object1, object2);

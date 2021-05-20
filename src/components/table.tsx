@@ -1,11 +1,11 @@
 import React from "react";
-import { IRow } from "../types";
+import { IRow, Version } from "../types";
 import { ObjectSymbol } from "./object-symbol";
 import { ForceArrows } from "./force-arrows";
 import "./table.scss";
 
 interface IProps {
-  version: string;
+  version: Version;
   rows: IRow[];
   forceText: string;
 }
