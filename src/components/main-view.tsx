@@ -11,7 +11,7 @@ interface IProps {
   showForce: boolean;
   mode: Mode;
   forceText: string;
-  saveToTable: (object1: SysObject, object2: SysObject) => void;
+  saveToTable: (object1: SysObject, object2: SysObject, object3: SysObject) => void;
   clearTable: () => void;
   handleChangeShowForceState: (state: boolean) => void;
 }
@@ -19,10 +19,15 @@ interface IProps {
 export const MainView: React.FC<IProps> = ({ showForce, mode, forceText, saveToTable, clearTable, handleChangeShowForceState }) => {
   const optionsList = getObjectOptions(mode);
   const [ object1, setObject1 ] = useState<SysObject>(optionsList[0].object as SysObject);
-  const [ object2, setObject2 ] = useState<SysObject>(SysObject.earth);
+  const [ object2, setObject2 ] = useState<SysObject>(  mode==="venus"
+                                                        ? SysObject.venus
+                                                        : (version==="earth" || version==="vanilla")
+                                                        ? SysObject.earth
+                                                        : optionsList[0].object as SysObject );
+  const object3 = SysObject.earth;
 
   const handleSave = () => {
-    saveToTable(object1, object2);
+    saveToTable(object1, object2, object3);
     handleChangeShowForceState(true);
   };
   const handleSetObject1 = (value: SysObject) => {
@@ -61,9 +66,20 @@ export const MainView: React.FC<IProps> = ({ showForce, mode, forceText, saveToT
           }
         </div>
         <div className="column">
-          <div className="object-label" data-testid="object-2">Object 2: { mode==="earth"? "Earth" : <SelectObject mode={mode} value={object2} onChange={handleSetObject2}/>}</div>
+          <div className="object-label" data-testid="object-2">Object 2: { mode==="venus"
+                                                    ? "Venus"
+                                                    : mode==="earth"
+                                                      ? "Earth"
+                                                      : <SelectObject mode={mode} value={object2} onChange={handleSetObject2}/>}
+          </div>
           <ObjectSymbol objectType={object2} />
         </div>
+        {mode==="venus" &&
+          <div className="column">
+            <div className="object-label">Object 3: Earth </div>
+            <ObjectSymbol objectType={object3} />
+          </div>
+        }
       </div>
       <div className="buttons">
         <button onClick={handleSave} data-testid="save-button">{mode !== "vanilla"

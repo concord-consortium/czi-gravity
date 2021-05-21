@@ -12,11 +12,13 @@ export enum SysObject {
   worldTradeCtr = "worldTradeCtr",
   schoolbus = "schoolbus",
   venus = "venus",
+  null= "null",
 }
 
 export interface IRow {
   object1: SysObject;
   object2: SysObject;
+  object3: SysObject;
 }
 
 export interface IInteractiveState {

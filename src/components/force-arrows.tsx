@@ -34,6 +34,7 @@ const weight: Record<SysObject, number> = {
   worldTradeCtr: 2.7,
   schoolbus: 2.3,
   venus: 3,
+  null: 0,
 };
 
 const maxArrowWidthInPx = 150;

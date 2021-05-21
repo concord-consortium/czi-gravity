@@ -19,7 +19,7 @@ export const Table: React.FC<IProps> = ({ mode, rows, forceText }) => {
         <tbody>
           <tr>
             {!(mode==="earth") && <th>System</th>}
-            <th>Object 1</th>{mode !== "earth" && <th>Object 2</th>}
+            <th>Object 1</th><th>Object 2</th>{(mode==="venus") && <th>Object 3</th>}
             <th>{forceText}</th>
           </tr>
           {

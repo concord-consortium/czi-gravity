@@ -30,6 +30,7 @@ const weight: Record<SysObject, string> = {
   worldTradeCtr: "9,200,000,000 kg",
   schoolbus: "6,400 kg",
   venus: "4,900,000,000,000,000,000,000,000 kg",
+  null: ""
 };
 
 const imgSrc: Record<SysObject, string> = {
@@ -46,6 +47,7 @@ const imgSrc: Record<SysObject, string> = {
   worldTradeCtr: worldTradeCtrSrc,
   schoolbus: schoolbusSrc,
   venus: venusSrc,
+  null: "",
 };
 
 interface IProps {

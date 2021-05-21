@@ -19,8 +19,8 @@ export const App: React.FC = () => {
 
   useAutoHeight({ container: containerRef.current, disabled: false });
 
-  const saveToTable = (object1: SysObject, object2: SysObject) => {
-    setInteractiveState(prevState => ({ rows: [...(prevState?.rows || []), {object1, object2}] }));
+  const saveToTable = (object1: SysObject, object2: SysObject, object3: SysObject) => {
+    setInteractiveState(prevState => ({ rows: [...(prevState?.rows || []), {object1, object2, object3}] }));
   };
 
   const clearTable = () => {
