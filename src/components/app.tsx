@@ -34,9 +34,8 @@ export const App: React.FC = () => {
 
   return (
     <div className="app" ref={containerRef}>
-      { !report && <MainView showForce={showForce} version={version} saveToTable={saveToTable} clearTable={clearTable} forceText={forceText} /> }
+      { !report && <MainView forceText={forceText} showForce={showForce} version={version} saveToTable={saveToTable} clearTable={clearTable} handleChangeShowForceState={handleChangeShowForceState}/> }
       <Table version={version} rows={interactiveState?.rows || []} forceText={forceText}/>
     </div>
   );
 };
-

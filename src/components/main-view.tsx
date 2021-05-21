@@ -15,9 +15,7 @@ interface IProps {
   handleChangeShowForceState: (state: boolean) => void;
 }
 
-}
-
-export const MainView: React.FC<IProps> = ({ version, forceText, saveToTable, clearTable }) => {
+export const MainView: React.FC<IProps> = ({ showForce, version, forceText, saveToTable, clearTable, handleChangeShowForceState }) => {
   const optionsList = getObjectOptions(version);
 console.log(optionsList[0].object);
   const [ object1, setObject1 ] = useState<SysObject>(optionsList[0].object as SysObject);
@@ -46,15 +44,22 @@ console.log(optionsList[0].object);
       <div className="header">Select two objects:</div>
       <div className="columns">
         <div className="column">
-          <div className="object-label" data-testid="object-1">Object 1: <SelectObject value={object1} onChange={handleSetObject1}/></div>
+          <div className="object-label" data-testid="object-1">Object 1: <SelectObject version={version} value={object1} onChange={handleSetObject1}/></div>
           <ObjectSymbol objectType={object1} />
         </div>
         <div className="column arrows">
           <div className="label">{forceText}</div>
-          <ForceArrows object1={object1} object2={object2} />
+          { version !== "vanilla" && !showForce
+              ? <div className="question-mark" data-testid="question-mark"
+                     title="Click on Calculate forces button to see a representation of the forces between the two objects"
+                     onClick={showAlert}>
+                     ?
+                </div>
+              : <ForceArrows object1={object1} object2={object2} />
+          }
         </div>
         <div className="column">
-          <div className="object-label">Object 2: {version==="earth"? "Earth" : <SelectObject value={object2} onChange={handleSetObject2}/>}</div>
+          <div className="object-label">Object 2: {version==="earth"? "Earth" : <SelectObject version={version} value={object2} onChange={handleSetObject2}/>}</div>
           <ObjectSymbol objectType={object2} />
         </div>
       </div>
