@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { MainView } from "./main-view";
 import { Table } from "./table";
 import { SysObject, IInteractiveState } from "../types";
@@ -13,6 +13,7 @@ export const App: React.FC = () => {
   const initMsg = useInitMessage();
   const report = initMsg?.mode === "report";
   const version = getVersion();
+  const [ showForce, setShowForce ] = useState(false);
   const forceText = version === "earth" ? "Gravitational force between object and Earth"
                                         : "Strength and Direction of Gravitational Forces";
 
@@ -24,13 +25,17 @@ export const App: React.FC = () => {
 
   const clearTable = () => {
     setInteractiveState({ rows: [] });
+    handleChangeShowForceState(false);
+  };
+
+  const handleChangeShowForceState = (state: boolean) => {
+    setShowForce(state);
   };
 
   return (
     <div className="app" ref={containerRef}>
-      { !report && <MainView version={version} saveToTable={saveToTable} clearTable={clearTable} forceText={forceText} /> }
+      { !report && <MainView forceText={forceText} showForce={showForce} version={version} saveToTable={saveToTable} clearTable={clearTable} handleChangeShowForceState={handleChangeShowForceState}/> }
       <Table version={version} rows={interactiveState?.rows || []} forceText={forceText}/>
     </div>
   );
 };
-
