@@ -64,7 +64,7 @@ console.log(optionsList[0].object);
         </div>
       </div>
       <div className="buttons">
-        <button onClick={handleSave} data-testid="save-button">{version === "forces-unknown" ? "Calculate forces" : "Save to table"}</button>
+        <button onClick={handleSave} data-testid="save-button">{version !== "vanilla" ? "Calculate forces" : "Save to table"}</button>
         <button onClick={clearTable} data-testid="clear-table-button">Clear table</button>
       </div>
     </div>
