@@ -23,5 +23,5 @@ export interface IInteractiveState {
   rows: IRow[];
 }
 
-export const Versions = [ "forces-unknown", "earth", "venus", "vanilla" ] as const;
-export type Version = typeof Versions[number];
+export const Modes = [ "forces-unknown", "earth", "venus", "vanilla" ] as const;
+export type Mode = typeof Modes[number];

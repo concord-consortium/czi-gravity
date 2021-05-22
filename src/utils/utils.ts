@@ -1,12 +1,12 @@
-import { Versions, Version } from "../types";
+import { Modes, Mode } from "../types";
 
-export const getVersion = () => {
+export const getMode = () => {
   const queryParam = (window.location.search).split("?")[1];
-  return Versions.includes(queryParam as Version) ? queryParam as Version : "vanilla";
+  return Modes.includes(queryParam as Mode) ? queryParam as Mode : "vanilla";
 };
 
-export const getObjectOptions = (version: Version) => {
-  const versionOptions = {
+export const getObjectOptions = (mode: Mode) => {
+  const modeOptions = {
                             "earth": [ {object:"kite", text: "Kite"},
                                        {object:"soccer", text:"Soccer"},
                                        {object:"schoolbus", text:"School Bus"},
@@ -29,5 +29,5 @@ export const getObjectOptions = (version: Version) => {
                                          {object:"chair", text:"Chair"}
                                         ]
                           };
-  return versionOptions[version];
+  return modeOptions[mode];
 };
