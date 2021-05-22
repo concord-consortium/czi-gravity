@@ -12,7 +12,7 @@ export const SelectObject: React.FC<IProps> = ({ value, onChange }) => {
   };
 
   return (
-    <select onChange={handleChange} value={value}>
+    <select onChange={handleChange} value={value} data-testid="object-selection">
       <option value={SysObject.bottle}>Water Bottle</option>
       <option value={SysObject.earth}>Earth</option>
       <option value={SysObject.paperClip}>Paper Clip</option>
