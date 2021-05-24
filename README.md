@@ -45,6 +45,7 @@ To deploy a production release:
 ### Versions
 Adding query parameters to the url launches different versions of the model.
 * `forces-unknown` - Forces are not calculated automatically when user changes object selection.
+* `earth` = Object 2 is static to Earth. Force value is shown instead of force arrows.
 
 ### Testing
 
