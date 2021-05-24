@@ -14,7 +14,7 @@ export const SelectObject: React.FC<IProps> = ({ mode, value, onChange }) => {
   };
   const optionsList = getObjectOptions(mode);
   return (
-    <select onChange={handleChange} value={value}>
+    <select data-testid="object-selection" onChange={handleChange} value={value}>
       { optionsList.map((option: any, i: number) => {
           return <option value={option.object} key={option.object}>{option.text}</option>;
        })

@@ -28,7 +28,7 @@ export const Table: React.FC<IProps> = ({ mode, rows, forceText }) => {
               const idxReversed = rows.length - 1 - idx;
               const row = rows[idxReversed];
               return (
-                <tr key={idxReversed}>
+                <tr key={idxReversed} data-testid="data-row">
                   {!(mode==="earth") && <td>{ idxReversed + 1 }</td>}
                   <td><ObjectSymbol objectType={row.object1} small={true} /></td>
                   { mode !== "earth" && <td><ObjectSymbol objectType={row.object2} small={true} /></td>}

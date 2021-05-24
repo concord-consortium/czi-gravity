@@ -64,7 +64,7 @@ console.log(optionsList[0].object);
           }
         </div>
         <div className="column">
-          <div className="object-label">Object 2: { mode==="earth"? "Earth" : <SelectObject mode={mode} value={object2} onChange={handleSetObject2}/>}</div>
+          <div className="object-label" data-testid="object-2">Object 2: { mode==="earth"? "Earth" : <SelectObject mode={mode} value={object2} onChange={handleSetObject2}/>}</div>
           <ObjectSymbol objectType={object2} />
         </div>
       </div>
