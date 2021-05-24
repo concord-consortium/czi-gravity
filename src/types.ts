@@ -6,7 +6,7 @@ export enum SysObject {
   chair = "chair",
   backpack = "backpack",
   bowlingBall = "bowlingBall",
-  flourBag=  "flourBag",
+  flourBag =  "flourBag",
   soccer = "soccer",
   kite = "kite",
   worldTradeCtr = "worldTradeCtr",

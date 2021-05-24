@@ -5,6 +5,7 @@ import { ObjectSymbol } from "./object-symbol";
 import { ForceArrows } from "./force-arrows";
 import "./main-view.scss";
 import { getObjectOptions } from "../utils/utils";
+import { ForceValue } from "./force-value";
 
 interface IProps {
   showForce: boolean;
@@ -55,11 +56,13 @@ console.log(optionsList[0].object);
                      onClick={showAlert}>
                      ?
                 </div>
-              : <ForceArrows object1={object1} object2={object2} />
+              : (mode === "earth")
+                ? <ForceValue object1={object1} object2={object2} />
+                : <ForceArrows object1={object1} object2={object2} />
           }
         </div>
         <div className="column">
-          <div className="object-label">Object 2: {mode==="earth"? "Earth" : <SelectObject mode={mode} value={object2} onChange={handleSetObject2}/>}</div>
+          <div className="object-label">Object 2: { mode==="earth"? "Earth" : <SelectObject mode={mode} value={object2} onChange={handleSetObject2}/>}</div>
           <ObjectSymbol objectType={object2} />
         </div>
       </div>
