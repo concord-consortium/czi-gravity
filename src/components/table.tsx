@@ -19,7 +19,7 @@ export const Table: React.FC<IProps> = ({ mode, rows, forceText }) => {
         <tbody>
           <tr>
             {!(mode==="earth") && <th>System</th>}
-            <th>Object 1</th><th>Object 2</th>
+            <th>Object 1</th>{mode !== "earth" && <th>Object 2</th>}
             <th>{forceText}</th>
           </tr>
           {
@@ -31,8 +31,8 @@ export const Table: React.FC<IProps> = ({ mode, rows, forceText }) => {
                 <tr key={idxReversed}>
                   {!(mode==="earth") && <td>{ idxReversed + 1 }</td>}
                   <td><ObjectSymbol objectType={row.object1} small={true} /></td>
-                  <td><ObjectSymbol objectType={row.object2} small={true} /></td>
-                  { mode==="earth"
+                  { mode !== "earth" && <td><ObjectSymbol objectType={row.object2} small={true} /></td>}
+                  { mode === "earth"
                     ? <td><ForceValue object1={row.object1} object2={row.object2} /></td>
                     : <td><ForceArrows object1={row.object1} object2={row.object2} small={true} /></td>
                   }

@@ -40,9 +40,11 @@ console.log(optionsList[0].object);
     alert("Click on Calculate forces button to see a representation of the forces between the two objects");
   };
 
+  const headerText = mode === "earth" ? "Select Object 1:" : "Select two objects:";
+
   return (
     <div className="main-view">
-      <div className="header">Select two objects:</div>
+      <div className="header">{headerText}</div>
       <div className="columns">
         <div className="column">
           <div className="object-label" data-testid="object-1">Object 1: <SelectObject mode={mode} value={object1} onChange={handleSetObject1}/></div>
@@ -67,7 +69,10 @@ console.log(optionsList[0].object);
         </div>
       </div>
       <div className="buttons">
-        <button onClick={handleSave} data-testid="save-button">{mode !== "vanilla" ? "Calculate forces" : "Save to table"}</button>
+        <button onClick={handleSave} data-testid="save-button">{mode !== "vanilla"
+                                                                ? (mode === "earth" ? "Calculate force" : "Calculate forces")
+                                                                : "Save to table"}
+        </button>
         <button onClick={clearTable} data-testid="clear-table-button">Clear table</button>
       </div>
     </div>
