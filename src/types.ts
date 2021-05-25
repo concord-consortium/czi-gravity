@@ -12,7 +12,6 @@ export enum SysObject {
   worldTradeCtr = "worldTradeCtr",
   schoolbus = "schoolbus",
   venus = "venus",
-  null= "null",
 }
 
 export interface IRow {

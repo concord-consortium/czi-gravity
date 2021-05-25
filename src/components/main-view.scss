@@ -1,4 +1,6 @@
 .main-view {
+  margin-bottom: 40px;
+
   .header {
     font-size: 18px;
   }
@@ -21,30 +23,35 @@
     flex-direction: column;
     align-items: center;
     width: 33%;
-  }
+    height: 235px;
+    .arrows {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+      position: absolute;
+      top: 50px;
 
-  .arrows {
-    padding-top: 50px;
-    .label {
-      margin-bottom: 10px;
+      .label {
+        margin-bottom: 10px;
+        text-align: center;
+        width: 200px;
+      }
+      .question-mark {
+        font-size: 26px;
+      }
+    }
+
+    .buttons {
       text-align: center;
-      width: 200px;
-    }
-    .question-mark {
-      font-size: 26px;
-    }
-  }
+      position: relative;
+      bottom: -220px;
 
-  .buttons {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-
-    button {
-      padding: 6px;
-      margin: 5px;
-      font-size: 16px;
+      button {
+        padding: 6px;
+        margin: 5px;
+        font-size: 16px;
+      }
     }
   }
 }
-
