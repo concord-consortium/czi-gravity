@@ -4,7 +4,7 @@ import { Table } from "./table";
 import { SysObject, IInteractiveState } from "../types";
 import { useAutoHeight } from "../hooks/use-auto-height";
 import { useInteractiveState, useInitMessage } from "@concord-consortium/lara-interactive-api";
-import { getVersion } from "../utils/utils";
+import { getMode } from "../utils/utils";
 import "./app.scss";
 
 export const App: React.FC = () => {
@@ -12,8 +12,10 @@ export const App: React.FC = () => {
   const { interactiveState, setInteractiveState } = useInteractiveState<IInteractiveState>();
   const initMsg = useInitMessage();
   const report = initMsg?.mode === "report";
-  const version = getVersion();
+  const mode = getMode();
   const [ showForce, setShowForce ] = useState(false);
+  const forceText = mode === "earth" ? "Gravitational force between object and Earth"
+                                        : "Strength and Direction of Gravitational Forces";
 
   useAutoHeight({ container: containerRef.current, disabled: false });
 
@@ -32,9 +34,8 @@ export const App: React.FC = () => {
 
   return (
     <div className="app" ref={containerRef}>
-      { !report && <MainView showForce={showForce} version={version} saveToTable={saveToTable} clearTable={clearTable} handleChangeShowForceState={handleChangeShowForceState}/> }
-      <Table rows={interactiveState?.rows || []} />
+      { !report && <MainView forceText={forceText} showForce={showForce} mode={mode} saveToTable={saveToTable} clearTable={clearTable} handleChangeShowForceState={handleChangeShowForceState}/> }
+      <Table mode={mode} rows={interactiveState?.rows || []} forceText={forceText}/>
     </div>
   );
 };
-

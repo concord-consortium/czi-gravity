@@ -14,9 +14,17 @@ const getForce = (mass1: number, mass2: number) => mass1 * mass2;
 
 const weight: Record<SysObject, number> = {
   paperClip: 1,
+  kite: 1.01,
+  soccer: 1.35,
   bottle: 1.4,
+  flourBag: 1.45,
   chair: 1.8,
+  bowlingBall: 1.801,
+  backpack: 1.85,
   human: 2.2,
+  schoolbus: 2.4,
+  worldTradeCtr: 2.75,
+  venus: 2.9,
   earth: 3,
 };
 
