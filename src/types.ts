@@ -6,7 +6,7 @@ export enum SysObject {
   chair = "chair",
   backpack = "backpack",
   bowlingBall = "bowlingBall",
-  flourBag=  "flourBag",
+  flourBag =  "flourBag",
   soccer = "soccer",
   kite = "kite",
   worldTradeCtr = "worldTradeCtr",
@@ -23,5 +23,5 @@ export interface IInteractiveState {
   rows: IRow[];
 }
 
-export const Versions = [ "forces-unknown", "earth", "venus", "vanilla" ] as const;
-export type Version = typeof Versions[number];
+export const Modes = [ "forces-unknown", "earth", "venus", "vanilla" ] as const;
+export type Mode = typeof Modes[number];
