@@ -19,7 +19,7 @@ export const Table: React.FC<IProps> = ({ mode, rows }) => {
       <table>
         <tbody>
           <tr>
-            {!( mode === "earth" || mode === "venus" ) && <th>System</th>}
+            { !( mode === "earth" || mode === "venus" ) && <th>System</th>}
             <th>Object 1</th>
             { mode === "venus" ? <th>Gravitational force between object and Venus</th>
                                : mode !== "earth" && <th>Object 2</th>}

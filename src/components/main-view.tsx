@@ -73,18 +73,18 @@ export const MainView: React.FC<IProps> = ({ showForce, mode, saveToTable, clear
           </div>
           <div className="buttons">
             <button onClick={handleSave} data-testid="save-button">{ mode !== "vanilla"
-                                                                    ? ( mode === "earth" ? "Calculate force" : "Calculate forces" )
-                                                                    : "Save to table"}
+                                                                     ? ( mode === "earth" ? "Calculate force" : "Calculate forces" )
+                                                                     : "Save to table"}
             </button>
             <button onClick={clearTable} data-testid="clear-table-button">Clear table</button>
           </div>
         </div>
         <div className="column">
           <div className="object-label" data-testid="object-2">Object 2: { mode === "venus"
-                                                    ? "Venus"
-                                                    : mode === "earth"
-                                                      ? "Earth"
-                                                      : <SelectObject mode={mode} value={object2} onChange={handleSetObject2}/>}
+                                                                           ? "Venus"
+                                                                           : mode === "earth"
+                                                                             ? "Earth"
+                                                                             : <SelectObject mode={mode} value={object2} onChange={handleSetObject2}/>}
           </div>
           <ObjectSymbol objectType={object2} />
         </div>
