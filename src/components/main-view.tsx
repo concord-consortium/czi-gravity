@@ -17,7 +17,6 @@ interface IProps {
 
 export const MainView: React.FC<IProps> = ({ showForce, version, forceText, saveToTable, clearTable, handleChangeShowForceState }) => {
   const optionsList = getObjectOptions(version);
-console.log(optionsList[0].object);
   const [ object1, setObject1 ] = useState<SysObject>(optionsList[0].object as SysObject);
   const [ object2, setObject2 ] = useState<SysObject>((version==="earth" || version==="vanilla")
                                                         ? SysObject.earth : optionsList[0].object as SysObject);
