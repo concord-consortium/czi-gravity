@@ -81,7 +81,7 @@ console.log(optionsList[0].object);
           </div>
         </div>
         <div className="column">
-          <div className="object-label">Object 2: { mode === "venus"
+          <div className="object-label" data-testid="object-2">Object 2: { mode === "venus"
                                                     ? "Venus"
                                                     : mode === "earth"
                                                       ? "Earth"

@@ -3,5 +3,7 @@
   "video": false,
   "fixturesFolder": false,
   "projectId": "r9de4a",
-  "defaultCommandTimeout": 8000
+  "defaultCommandTimeout": 8000,
+  "viewportWidth": 1400,
+  "viewportHeight": 1000
 }
