@@ -8,7 +8,7 @@ export const getMode = () => {
 export const getObjectOptions = (mode: Mode) => {
   const modeOptions = {
                             "earth": [ {object:"kite", text: "Kite"},
-                                       {object:"soccer", text:"Soccer"},
+                                       {object:"soccer", text:"Soccer Ball"},
                                        {object:"schoolbus", text:"School Bus"},
                                        {object:"worldTradeCtr", text:"One World Trade Center"}
                                       ],
