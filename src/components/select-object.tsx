@@ -6,6 +6,7 @@ interface IProps {
   mode: Mode;
   value: SysObject;
   onChange?: (value: SysObject) => void;
+  changeShowForceState?: (state: boolean) => void;
 }
 
 export const SelectObject: React.FC<IProps> = ({ mode, value, onChange }) => {

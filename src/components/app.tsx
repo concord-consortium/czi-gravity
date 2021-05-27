@@ -14,13 +14,11 @@ export const App: React.FC = () => {
   const report = initMsg?.mode === "report";
   const mode = getMode();
   const [ showForce, setShowForce ] = useState(false);
-  const forceText = mode === "earth" ? "Gravitational force between object and Earth"
-                                        : "Strength and Direction of Gravitational Forces";
 
   useAutoHeight({ container: containerRef.current, disabled: false });
 
-  const saveToTable = (object1: SysObject, object2: SysObject) => {
-    setInteractiveState(prevState => ({ rows: [...(prevState?.rows || []), {object1, object2}] }));
+  const saveToTable = (object1: SysObject, object2: SysObject, object3: SysObject) => {
+    setInteractiveState(prevState => ({ rows: [...(prevState?.rows || []), {object1, object2, object3}] }));
   };
 
   const clearTable = () => {
@@ -34,8 +32,8 @@ export const App: React.FC = () => {
 
   return (
     <div className="app" ref={containerRef}>
-      { !report && <MainView forceText={forceText} showForce={showForce} mode={mode} saveToTable={saveToTable} clearTable={clearTable} handleChangeShowForceState={handleChangeShowForceState}/> }
-      <Table mode={mode} rows={interactiveState?.rows || []} forceText={forceText}/>
+      { !report && <MainView showForce={showForce} mode={mode} saveToTable={saveToTable} clearTable={clearTable} handleChangeShowForceState={handleChangeShowForceState}/> }
+      <Table mode={mode} rows={interactiveState?.rows || []} />
     </div>
   );
 };

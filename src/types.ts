@@ -17,6 +17,7 @@ export enum SysObject {
 export interface IRow {
   object1: SysObject;
   object2: SysObject;
+  object3: SysObject;
 }
 
 export interface IInteractiveState {
