@@ -40,6 +40,23 @@
       .question-mark {
         font-size: 26px;
       }
+      .result {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .result-label {
+          display: flex;
+          justify-content: flex-start;
+          width: 150px;
+        }
+        .force-value {
+          display: flex;
+          justify-content: flex-end;
+          width: 65px;
+        }
+      }
     }
 
     .buttons {

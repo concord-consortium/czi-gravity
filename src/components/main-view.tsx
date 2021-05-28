@@ -61,10 +61,14 @@ export const MainView: React.FC<IProps> = ({ showForce, mode, saveToTable, clear
                   </div>
                 : mode === "venus"
                   ? <>
-                    <div className="label">Force between object 1 and Venus:</div>
-                    <ForceValue object1={object1} object2={object2} />
-                    <div className="label">Force between object 1 and Earth:</div>
-                    <ForceValue object1={object1} object2={object3} />
+                      <div className="result">
+                        <div className="result-label">Force between object 1 and Venus:</div>
+                        <ForceValue object1={object1} object2={object2} />
+                      </div>
+                      <div className="result">
+                        <div className="result-label">Force between object 1 and Earth:</div>
+                        <ForceValue object1={object1} object2={object3} />
+                      </div>
                     </>
                   : mode === "earth"
                     ? <ForceValue object1={object1} object2={object2} />
