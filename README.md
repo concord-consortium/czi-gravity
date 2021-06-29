@@ -46,7 +46,7 @@ To deploy a production release:
 Adding query parameters to the url launches different versions of the model.
 * `forces-unknown` - Forces are not calculated automatically when user changes object selection.
 * `earth` = Object 2 is static to Earth. Force value is shown instead of force arrows.
-
+* `venus` = Object 2 is static to Venus. Object 3 is static to Earth. Force value is show instead of force arrows.
 ### Testing
 
 Run `npm test` to run jest tests. Run `npm run test:full` to run jest and Cypress tests.

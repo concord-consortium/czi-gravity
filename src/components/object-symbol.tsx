@@ -18,7 +18,7 @@ import "./object-symbol.scss";
 
 const weight: Record<SysObject, string> = {
   bottle: "0.6 kg",
-  earth: "6,000,000,000,000,000,000,000,000 kg",
+  earth: "6,000,000,000 quadrillion kg",
   paperClip: "0.0005 kg",
   human: "average 80 kg",
   chair: "4.5 kg",
@@ -29,7 +29,7 @@ const weight: Record<SysObject, string> = {
   kite: "0.0045 kg",
   worldTradeCtr: "9,200,000,000 kg",
   schoolbus: "6,400 kg",
-  venus: "4,900,000,000,000,000,000,000,000 kg",
+  venus: "4,900,000,000 quadrillion kg",
 };
 
 const imgSrc: Record<SysObject, string> = {
